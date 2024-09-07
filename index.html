@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jira</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./Aretedge_Logo.webp">
+</head>
+<body>
+    <div class="container">
+        <div class="first">
+            <div class="logo">
+                <img src="Aretedge_Logo.webp" alt=""> <p>Aretedge Innovation</p>
+            </div>
+            <div class="inpt">
+                <p class="ticket">Enter the ticket number:</p>
+                <input type="text" id="userInput" placeholder="Enter a number...">
+            </div>
+    
+            <div>
+                <button id="submitButton" disabled>Submit</button>
+            </div>
+        </div>
+        <div class="second">
+            <a href="#" id="myAnchor" target="_blank" class="disabled"></a>
+            <p style="color: white;" id="message">Waiting for ticket number...</p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
