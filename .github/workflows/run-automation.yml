@@ -1,0 +1,31 @@
+name: Run Selenium Automation
+
+on:
+  workflow_dispatch:  # Allows you to trigger this workflow manually or via API
+    inputs:
+      username:
+        description: 'Enter Username'
+        required: true
+        default: 'default_username'
+      password:
+        description: 'Enter Password'
+        required: true
+        default: 'default_password'
+
+jobs:
+  run-selenium-automation:
+    runs-on: ubuntu-latest  # You can use other environments if needed
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Java
+        uses: actions/setup-java@v2
+        with:
+          java-version: '11'  # Use the Java version you require
+
+      - name: Install dependencies
+        run: mvn install -f pom.xml  # Assuming Maven is used for dependency management
+
+      - name: Run Selenium automation
+        run: mvn test -f pom.xml  # Run your Selenium tests here
